@@ -1,0 +1,77 @@
+﻿@model FileValidation.Models.FileModel
+
+@{
+
+    Layout = null;
+
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>How to Upload a File and Save in Server Folder in ASP.NET Core </title>
+
+</head>
+
+<body>
+
+    @using (Html.BeginForm("Index", "FileUpload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+    {
+        <table>
+
+         
+            
+        
+
+            <tr>
+
+                <td>File 1:</td>
+
+                <td>
+
+                    <input type="file" asp-for="File1" name="File1" />
+                    <span asp-validation-for="File1" class="text-danger"></span>
+
+                    <br />
+
+                </td>
+
+            </tr>
+
+          
+           
+        
+
+            <tr>
+
+                <td></td>
+
+                <td>
+
+                    <input type="submit" value="Upload" class="btn-default" />
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    }
+
+</body>
+
+</html>
+
+@section Scripts{
+    <partial name ="_ValidationScriptsPartial" />
+}
+
+
